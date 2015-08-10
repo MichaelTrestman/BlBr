@@ -28,7 +28,7 @@ public class Brick : MonoBehaviour {
 	}
 	
 	void OnCollisionEnter2D (Collision2D collision){
-		AudioSource.PlayClipAtPoint (crack, transform.position);
+		AudioSource.PlayClipAtPoint (crack, transform.position, .99f);
 		if (isBreakable) { 
 			HandleHits();
 		}
@@ -56,6 +56,7 @@ public class Brick : MonoBehaviour {
 			this.GetComponent<SpriteRenderer>().sprite = hitSprites[spriteIndex];
 		}
 	}
+
 	public static void ClearBricks(){
 		breakableCount = 0;
 	}
